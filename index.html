@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KROWL is a communication and organization management app for gaming and other communities.">
+  <meta name="theme-color" content="#0b1118">
+  <title>KROWL — Your community. Your command.</title>
+  <style>
+    :root {
+      --bg: #0b1118;
+      --panel: #111c26;
+      --panel-2: #14232e;
+      --text: #f3f7fa;
+      --muted: #a9bac6;
+      --teal: #42d6c5;
+      --teal-dark: #163f43;
+      --line: rgba(180, 214, 224, .15);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 82% 8%, rgba(35, 120, 124, .18), transparent 35%),
+        radial-gradient(ellipse at 5% 30%, rgba(38, 79, 112, .16), transparent 38%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      min-height: 82px; border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: .16em; font-size: 1.25rem; }
+    .mark { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(66,214,197,.42); border-radius: 12px; background: linear-gradient(145deg, #163f43, #111c26); }
+    .mark svg { width: 27px; height: 27px; }
+    .navlinks { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .93rem; }
+    .navlinks a:hover, footer a:hover { color: var(--teal); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 46px; padding: 0 19px; border-radius: 10px; font-weight: 750;
+      border: 1px solid rgba(66,214,197,.5); background: var(--teal); color: #071416;
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .button.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+    .hero { padding: 82px 0 70px; display: grid; grid-template-columns: 1.04fr .96fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--teal); font-weight: 800; letter-spacing: .13em; text-transform: uppercase; font-size: .76rem; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 16px var(--teal); }
+    h1 { font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.03; letter-spacing: -.055em; margin: 18px 0 24px; max-width: 700px; }
+    h1 span { color: var(--teal); }
+    .hero p { color: var(--muted); font-size: 1.12rem; max-width: 580px; margin: 0 0 28px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .note { color: #7f929f; font-size: .82rem; margin-top: 16px; }
+    .visual { position: relative; min-height: 380px; display: grid; place-items: center; }
+    .orbit { position: absolute; width: min(100%, 440px); aspect-ratio: 1; border: 1px solid rgba(66,214,197,.16); border-radius: 50%; }
+    .orbit::before, .orbit::after { content: ""; position: absolute; border: 1px solid rgba(66,214,197,.11); border-radius: 50%; inset: 10%; }
+    .orbit::after { inset: 22%; }
+    .visual-card { position: relative; z-index: 1; width: min(100%, 390px); border: 1px solid rgba(115, 206, 204, .25); border-radius: 20px; padding: 20px; background: linear-gradient(150deg, rgba(24,43,55,.96), rgba(12,21,30,.96)); box-shadow: 0 28px 80px rgba(0,0,0,.34); transform: rotate(-2deg); }
+    .visual-top { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: .78rem; padding-bottom: 15px; border-bottom: 1px solid var(--line); }
+    .live { color: var(--teal); display: flex; align-items: center; gap: 7px; }
+    .visual-title { font-size: 1.25rem; font-weight: 800; margin: 18px 0 6px; }
+    .visual-sub { color: var(--muted); font-size: .88rem; }
+    .fleet-row { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .ship-icon { flex: 0 0 42px; height: 42px; display: grid; place-items: center; border-radius: 10px; color: var(--teal); background: rgba(66,214,197,.1); font-size: 1.2rem; }
+    .fleet-info { flex: 1; min-width: 0; }
+    .fleet-info strong { display: block; font-size: .91rem; }
+    .fleet-info small { color: var(--muted); font-size: .77rem; }
+    .status { font-size: .7rem; color: var(--teal); border: 1px solid rgba(66,214,197,.3); border-radius: 20px; padding: 3px 8px; }
+    .section { padding: 72px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 680px; margin-bottom: 30px; }
+    .section h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -.035em; line-height: 1.15; margin: 12px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: linear-gradient(145deg, rgba(20,35,46,.9), rgba(15,25,34,.9)); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+    .card-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(66,214,197,.1); color: var(--teal); margin-bottom: 17px; font-size: 1.35rem; }
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .callout { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; padding: 30px; border: 1px solid rgba(66,214,197,.25); border-radius: 18px; background: linear-gradient(110deg, rgba(22,63,67,.48), rgba(17,28,38,.82)); }
+    .callout h2 { margin-top: 0; }
+    .callout p { color: var(--muted); margin: 0; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 36px; color: var(--muted); font-size: .88rem; }
+    .foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .placeholder { color: #8296a3; font-size: .8rem; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 60px; }
+      .visual { min-height: 330px; }
+      .cards { grid-template-columns: 1fr; }
+      .navlinks { gap: 14px; }
+      .navlinks .nav-optional { display: none; }
+      .callout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .nav { min-height: 70px; }
+      .navlinks { display: none; }
+      .hero { padding: 48px 0; }
+      .visual { min-height: 300px; }
+      .visual-card { padding: 16px; }
+      .section { padding: 54px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#" aria-label="KROWL home">
+      <span class="mark" aria-hidden="true">
+        <!-- Temporary crow-inspired mark; replace with your official logo when ready. -->
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 43 24 30 20 16 34 24 47 14 43 30 56 35 39 39 32 53 27 40Z" fill="#42d6c5"/>
+          <circle cx="39" cy="28" r="2.4" fill="#0b1118"/>
+        </svg>
+      </span>
+      <span>KROWL</span>
+    </a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#communities">Who it's for</a>
+      <a href="#support" class="nav-optional">Support</a>
+    </nav>
+    <a class="button secondary" href="#download">Get updates</a>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Built for communities</div>
+        <h1>Your community.<br>Your <span>command.</span></h1>
+        <p>KROWL brings the tools your community needs into one organized place — from communication and coordination to customizable organization features and fleet management.</p>
+        <div class="actions">
+          <a class="button" href="#features">Explore KROWL <span aria-hidden="true">→</span></a>
+          <a class="button secondary" href="#download">Windows app</a>
+        </div>
+        <div class="note">A work in progress. Built with communities, for communities.</div>
+      </div>
+      <div class="visual" aria-label="Illustration of a community fleet dashboard">
+        <div class="orbit"></div>
+        <div class="visual-card">
+          <div class="visual-top"><span>KROWL / ORGANIZATION</span><span class="live"><span class="dot"></span> SYSTEM READY</span></div>
+          <div class="visual-title">Fleet overview</div>
+          <div class="visual-sub">Keep your people, plans, and assets in view.</div>
+          <div class="fleet-row">
+            <div class="ship-icon">✦</div>
+            <div class="fleet-info"><strong>Fleet registry</strong><small>Ships, vehicles & crew</small></div>
+            <span class="status">READY</span>
+          </div>
+          <div class="fleet-row">
+            <div class="ship-icon">⌘</div>
+            <div class="fleet-info"><strong>Organization hub</strong><small>Roles, resources & updates</small></div>
+            <span class="status">ACTIVE</span>
+          </div>
+          <div class="fleet-row" style="border-bottom:0">
+            <div class="ship-icon">◉</div>
+            <div class="fleet-info"><strong>Community tools</strong><small>Flexible by design</small></div>
+            <span class="status">BUILDING</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">One home base</div>
+          <h2>Less juggling. More doing.</h2>
+          <p>Bring the important parts of your community together, with features that can grow alongside your group.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">⌘</div>
+            <h3>Organization tools</h3>
+            <p>Keep your community organized with customizable spaces, useful information, and tools shaped around how your group works.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">✦</div>
+            <h3>Fleet management</h3>
+            <p>Maintain a clear registry for ships, ground vehicles, and other assets, with room for the details your members need.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">◎</div>
+            <h3>Built to collaborate</h3>
+            <p>Help members and leaders stay on the same page with shared information and practical community-focused features.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="communities">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Flexible by design</div>
+          <h2>For gaming and other communities.</h2>
+          <p>KROWL is starting with the needs of gaming groups in mind, while keeping the door open for other communities that want better ways to organize and work together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="wrap">
+        <div class="callout">
+          <div>
+            <div class="eyebrow">Coming together</div>
+            <h2>Follow KROWL as it grows.</h2>
+            <p>The website and app are still being built. Download details and more information will be added here as they become ready.</p>
+          </div>
+          <a class="button" href="mailto:hello@krowlchat.com?subject=KROWL%20updates">Ask about KROWL <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="placeholder" style="margin-top:14px">Note: The email link is a placeholder and can be replaced with your preferred contact method.</p>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Support the project</div>
+          <h2>Help KROWL take flight.</h2>
+          <p>KROWL is an independent project in development. A voluntary support link can be added here when your PayPal donation link is ready. No pressure — community comes first.</p>
+        </div>
+        <a class="button secondary" href="mailto:hello@krowlchat.com?subject=Supporting%20KROWL">Support link coming soon</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <div>© <span id="year">2026</span> KROWL. Built for communities.</div>
+      <div class="foot-links">
+        <a href="#features">Features</a>
+        <a href="#support">Support</a>
+        <a href="mailto:hello@krowlchat.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
