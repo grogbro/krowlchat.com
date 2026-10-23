@@ -23,3 +23,22 @@
 .floating-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 @media(max-width:700px){.screenshots-section{padding:42px 0 52px}.screenshots-heading{align-items:start;flex-direction:column;gap:12px}.screenshot-gallery{grid-template-columns:1fr;gap:18px}.screenshot-card:first-child{grid-column:auto}.screenshot-card figcaption{padding:12px 14px 15px}.floating-top{bottom:15px;right:15px}}
 @media(prefers-reduced-motion:reduce){.screenshot-card img,.floating-top{transition:none}}
+
+/* ===== HERO LOGO POSITION (CUSTOMIZE HERE) =====
+   Move the hero logo/text group up toward the top of the hero,
+   enlarge the crow while keeping the KROWL lettering the SAME size.
+   The crow's beak aligns approximately with the vertical center of KROWL.
+   This only affects the large homepage logo, not the navigation/footer logos. */
+@media (min-width:1101px) {
+  .hero-layout { align-items:start; }
+  .hero-copy { padding-top: 0; }
+  .hero-identity { align-items:center; gap:8px; margin-bottom:10px; }
+  .hero-identity img { width:43%; max-width:255px; height:190px; aspect-ratio:auto; object-fit:contain; }
+  .hero-identity h1 { flex:0 0 auto; }
+  .app-frame { margin-top:0; }
+}
+/* Tablet and mobile keep their stacked responsive layout. */
+@media (min-width:701px) and (max-width:1100px) {
+  .hero-layout { align-items:start; }
+  .hero-identity img { width:39%; max-width:245px; height:170px; aspect-ratio:auto; object-fit:contain; }
+}
