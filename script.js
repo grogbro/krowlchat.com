@@ -20,3 +20,12 @@ const backToTop = document.querySelector('.floating-top');
 function updateBackToTop() { backToTop.classList.toggle('visible', window.scrollY > 380); }
 window.addEventListener('scroll', updateBackToTop, {passive:true});
 updateBackToTop();
+
+// BACK TO TOP FIX: #home points to the hero section, below the header.
+// Scroll to document position 0 instead so the header is fully visible.
+document.querySelectorAll('.floating-top, .back-inline').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  });
+});
