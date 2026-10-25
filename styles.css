@@ -42,3 +42,29 @@
   .hero-layout { align-items:start; }
   .hero-identity img { width:39%; max-width:245px; height:170px; aspect-ratio:auto; object-fit:contain; }
 }
+
+/* Dev01: section navigation and footer logo showcase */
+.section-top-link{display:flex;justify-content:flex-end;padding-top:12px;padding-bottom:26px}
+.krowl-led-showcase{padding:42px 0 56px;text-align:center;overflow:hidden}
+.krowl-led-showcase img{display:block;width:100%;max-width:700px;height:auto;margin:0 auto;object-fit:contain}
+@media(max-width:700px){.section-top-link{padding-top:8px;padding-bottom:24px}.krowl-led-showcase{padding:26px 0 36px}}
+
+/* Dev03: illuminated KROWL graphic links to page top */
+.krowl-led-top-link{display:block;width:fit-content;max-width:100%;margin:0 auto;cursor:pointer}
+.krowl-led-top-link:focus-visible{outline:2px solid #6baad5;outline-offset:5px;border-radius:3px}
+
+/* Dev07: Donate is a blue text link, not a button */
+.nav-links a.nav-donate{display:inline-flex;align-items:center;gap:4px;height:auto;min-height:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:#528fff;font-weight:500;line-height:inherit;white-space:nowrap;transition:color .2s ease}
+.nav-links a.nav-donate .donate-heart{font-size:13px;color:inherit;line-height:1}
+.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{background:none;border:0;box-shadow:none;color:#9bd6ff}
+.nav-links a.nav-donate:focus-visible{outline:2px solid #9bd6ff;outline-offset:3px}
+@media(max-width:700px){.nav-links a.nav-donate{display:inline-flex;align-self:auto;margin:0;padding:0;min-height:0;border:0;border-radius:0}.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{border:0}}
+@media(prefers-reduced-motion:reduce){.nav-links a.nav-donate{transition:none}}
+
+/* Dev08: align Donate with all other navigation links */
+@media(min-width:701px){.nav-links a.nav-donate{height:100%;border-bottom:3px solid transparent;line-height:1.55}}
+@media(max-width:700px){.nav-links a.nav-donate{height:42px;padding-left:12px;border-left:3px solid transparent;justify-content:flex-start}}
+
+/* Dev09: Match the standard navigation underline on Donate hover */
+@media(min-width:701px){.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{border-bottom:3px solid var(--blue)}}
+@media(max-width:700px){.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{border-left:3px solid var(--blue)}}
