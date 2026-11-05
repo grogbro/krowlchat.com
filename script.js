@@ -46,3 +46,18 @@ if (downloadModal && typeof downloadModal.showModal === 'function') {
   // Clicking the dark area outside the popup closes it
   downloadModal.addEventListener('click', event => { if (event.target === downloadModal) closeDownloadModal(); });
 }
+
+// ACTIVE NAV LINK: highlight the menu item for the section currently on screen.
+const navSectionLinks = [...navigation.querySelectorAll('a[href^="#"]')]
+  .map(link => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+  .filter(item => item.section);
+function updateActiveNav() {
+  let current = navSectionLinks[0];
+  const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+  if (atBottom) current = navSectionLinks[navSectionLinks.length - 1];
+  else navSectionLinks.forEach(item => { if (item.section.getBoundingClientRect().top <= 140) current = item; });
+  navSectionLinks.forEach(item => item.link.classList.toggle('active', item === current));
+}
+window.addEventListener('scroll', updateActiveNav, {passive:true});
+window.addEventListener('resize', updateActiveNav);
+updateActiveNav();
