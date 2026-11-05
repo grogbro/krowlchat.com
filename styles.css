@@ -80,3 +80,10 @@
 .download-modal-close{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;border-radius:8px;background:none;color:#fff;font-size:30px;line-height:1;cursor:pointer}
 .download-modal-close:hover,.download-modal-close:focus-visible{background:#ffffff14}
 @media(max-width:700px){.download-modal{padding:30px 20px 22px}.download-modal p{font-size:15px}.download-modal-support{width:100%}}
+
+/* Dev11: Donate link and heart in red */
+.nav-links a.nav-donate{color:#ff4d5e}
+.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{color:#ff8a95}
+.nav-links a.nav-donate:focus-visible{outline-color:#ff8a95}
+@media(min-width:701px){.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{border-bottom-color:#ff4d5e}}
+@media(max-width:700px){.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{border-left-color:#ff4d5e}}
