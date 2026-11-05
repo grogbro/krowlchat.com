@@ -29,3 +29,20 @@ document.querySelectorAll('.floating-top, .back-inline').forEach(link => {
     window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   });
 });
+
+// DOWNLOAD POPUP: clicking any KROWL-Setup.exe link starts the download
+// and shows a "KROWL is downloading" popup with a Support KROWL button.
+const downloadModal = document.getElementById('download-modal');
+if (downloadModal && typeof downloadModal.showModal === 'function') {
+  const closeDownloadModal = () => downloadModal.close();
+  document.querySelectorAll('a[href$="KROWL-Setup.exe"]:not(.download-modal-retry)').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      if (!downloadModal.open) downloadModal.showModal();
+      window.location.href = link.href; // starts the download; page stays put
+    });
+  });
+  downloadModal.querySelector('.download-modal-close').addEventListener('click', closeDownloadModal);
+  // Clicking the dark area outside the popup closes it
+  downloadModal.addEventListener('click', event => { if (event.target === downloadModal) closeDownloadModal(); });
+}
