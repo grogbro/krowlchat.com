@@ -87,3 +87,8 @@
 .nav-links a.nav-donate:focus-visible{outline-color:#ff8a95}
 @media(min-width:701px){.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{border-bottom-color:#ff4d5e}}
 @media(max-width:700px){.nav-links a.nav-donate:hover,.nav-links a.nav-donate:focus-visible{border-left-color:#ff4d5e}}
+
+/* Dev12: footer has three columns now ("Built for the Star Citizen community" removed) */
+@media(min-width:1101px){.footer-layout{grid-template-columns:auto 1fr auto}}
+@media(min-width:701px){.footer-layout{padding-right:110px}}
+@media(max-width:700px){.footer-layout{padding-bottom:64px}}
