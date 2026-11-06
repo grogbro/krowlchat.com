@@ -1,7 +1,7 @@
 {
   "name": "KROWL",
   "short_name": "KROWL",
-  "description": "Free community app for gaming groups and Star Citizen organizations.",
+  "description": "Free app for communities, teams and Star Citizen organizations.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#041120",
