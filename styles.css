@@ -95,3 +95,24 @@
 
 /* Dev13: unofficial fan project disclaimer */
 .footer-disclaimer{grid-column:1/-1;margin:0;padding-top:12px;border-top:1px solid #142a40;font-size:11px;line-height:1.6;color:#7f9bbd}
+
+/* Dev14: Why KROWL instead of Discord */
+.why-krowl{background:linear-gradient(180deg,#041120,#07182b);border-top:1px solid #1d3b55;padding:60px 0 66px;text-align:center}
+.why-krowl .eyebrow{font-size:12px;letter-spacing:.19em;font-weight:800;color:#1bcff2;margin:0 0 9px}
+.why-krowl h2{font-size:clamp(27px,3.2vw,39px);margin:0 0 10px;line-height:1.2}
+.why-intro{max-width:700px;margin:0 auto 34px;color:#b6cbe4;font-size:17px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:left;margin-bottom:34px}
+.why-grid article{background:#0b1a2c;border:1px solid #24405c;border-radius:12px;padding:24px}
+.why-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:13px;background:#0d2c4a;color:#4fd8ff;font-size:26px;margin-bottom:14px}
+.why-grid h3{margin:0 0 8px;font-size:18px}
+.why-grid p{margin:0;font-size:14px;line-height:1.65;color:#bbd1ed}
+.why-table{width:min(760px,100%);margin:0 auto;border-collapse:collapse;font-size:15px;text-align:left;background:#0b1a2c;border:1px solid #24405c;border-radius:12px;overflow:hidden}
+.why-table th,.why-table td{padding:13px 18px;border-bottom:1px solid #1a3550}
+.why-table tr:last-child th,.why-table tr:last-child td{border-bottom:0}
+.why-table thead th{background:#0d2440;font-size:13px;letter-spacing:.08em;color:#9fc3e8}
+.why-table thead th:nth-child(2){color:#4fd8ff}
+.why-table tbody th{font-weight:600;color:#e6effb}
+.why-table td{color:#a9c4e8}
+.why-table td strong{color:#5fe3a1}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.why-krowl{padding:42px 0 48px}.why-intro{font-size:15px}.why-table{font-size:13px}.why-table th,.why-table td{padding:10px 10px}}
