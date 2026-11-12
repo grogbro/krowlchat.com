@@ -116,3 +116,16 @@
 .why-table td strong{color:#5fe3a1}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr}}
 @media(max-width:700px){.why-krowl{padding:42px 0 48px}.why-intro{font-size:15px}.why-table{font-size:13px}.why-table th,.why-table td{padding:10px 10px}}
+
+/* Dev14: text pages (/terms/ and /delete-account/) - a plain readable column on the site's dark background */
+.legal{padding:44px 0 72px}
+.legal-body{max-width:780px}
+.legal h1{font-size:clamp(27px,3.4vw,38px);line-height:1.2;margin:0 0 6px}
+.legal h2{font-size:19px;margin:34px 0 8px;color:#fff}
+.legal p,.legal li{color:#d3e0f3;font-size:16px;line-height:1.65}
+.legal ul,.legal ol{padding-left:1.3rem;margin:8px 0 16px}
+.legal li{margin-bottom:6px}
+.legal a{color:#4fd8ff;text-decoration:underline}
+.legal-meta{color:#8fabcc!important;font-size:13px!important;margin:0 0 26px}
+.legal-back{font-size:14px;color:#d0def2;white-space:nowrap}
+.legal-back:hover{color:#1bbaff}
