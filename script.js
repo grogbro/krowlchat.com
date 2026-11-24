@@ -47,3 +47,8 @@ if (downloadModal && typeof downloadModal.showModal === 'function') {
   downloadModal.addEventListener('click', event => { if (event.target === downloadModal) closeDownloadModal(); });
 }
 
+
+// ANDROID FIRST: on Android phones, show the Google Play badge before the Windows button.
+if (/Android/i.test(navigator.userAgent)) {
+  document.querySelector('.download-area')?.classList.add('android-first');
+}
