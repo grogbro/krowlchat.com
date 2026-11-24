@@ -145,3 +145,13 @@
 @media(max-width:700px){.play-badge-wrap{width:100%}.play-badge img{height:56px}.platforms-line{text-align:center}}
 .platforms-line{margin:12px 0 16px}
 @media(max-width:700px){.download-screens{width:100%}}
+
+/* Dev16: top screenshot jumps to its larger version in Screenshots */
+.app-frame-link{display:block;cursor:zoom-in}
+.app-frame-link img{transition:filter .2s}
+.app-frame-link:hover img{filter:brightness(1.08)}
+.app-frame-link:focus-visible{outline:2px solid #4fd8ff;outline-offset:-2px}
+#shot-org-home{scroll-margin-top:96px}
+#shot-org-home:target{animation:shot-glow 2.2s ease-out}
+@keyframes shot-glow{0%,40%{box-shadow:0 0 0 3px #4fd8ff,0 0 30px #4fd8ff88}100%{box-shadow:0 0 0 0 transparent}}
+@media(prefers-reduced-motion:reduce){#shot-org-home:target{animation:none;outline:3px solid #4fd8ff}}
