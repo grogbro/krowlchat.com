@@ -156,3 +156,19 @@
 @keyframes shot-glow{0%,40%{box-shadow:0 0 0 3px #4fd8ff,0 0 30px #4fd8ff88}100%{box-shadow:0 0 0 0 transparent}}
 @media(prefers-reduced-motion:reduce){#shot-org-home:target{animation:none;outline:3px solid #4fd8ff}}
 .hero-copy .platforms-line{margin:24px 0 22px}
+
+/* Dev17: FAQ */
+.faq{background:#07182b;border-top:1px solid #1d3b55;padding:56px 0 60px}
+.faq-container{max-width:780px}
+.faq .eyebrow{font-size:12px;letter-spacing:.19em;font-weight:800;color:#1bcff2;margin:0 0 9px;text-align:center}
+.faq h2{text-align:center;font-size:clamp(25px,3vw,34px);margin:0 0 26px}
+.faq-item{background:#0b1a2c;border:1px solid #24405c;border-radius:12px;margin-bottom:12px}
+.faq-item summary{cursor:pointer;list-style:none;padding:17px 52px 17px 20px;font-weight:650;font-size:16px;position:relative}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;line-height:1;color:#4fd8ff}
+.faq-item[open] summary::after{content:"−"}
+.faq-item summary:hover{color:#4fd8ff}
+.faq-item summary:focus-visible{outline:2px solid #4fd8ff;outline-offset:2px;border-radius:12px}
+.faq-item p{margin:0;padding:0 20px 18px;font-size:15px;line-height:1.65;color:#bbd1ed}
+.faq-item p a{color:#4fd8ff;text-decoration:underline}
+@media(max-width:700px){.faq{padding:42px 0 46px}.faq-item summary{font-size:15px}}
